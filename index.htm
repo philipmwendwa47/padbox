@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>gaming</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="searchbar.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="left-section"><img class="brand-image" src="brand.png"></div>
+        <div class="middle-section">
+            <input class="search-bar" type="text" placeholder="search games">
+            <button class="search-button">
+                <img class="search-icon" src="search.png">
+            </button>
+        </div>
+        <div class="right-section">right-section</div>
+    </div>
+
+    <div class="games">
+        <div class="game-image-name-div"> 
+            <div class="image-div"><img class="game-image" src="checkers.png"></div>
+            <div class="game-name-div">checkers</div>
+        </div>
+
+        <div class="game-image-name-div">
+            <div class="image-div"><img class="game-image" src="moto rider.png"></div>
+            <div class="game-name-div">moto rider</div>
+        </div>
+        <div class="game-image-name-div">
+            <div class="image-div"><img class="game-image" src="moto rider.png"></div>
+            <div class="game-name-div">moto rider</div>
+        </div>
+        <div class="game-image-name-div"> 
+            <div class="image-div"><img class="game-image" src="biliards.png"></div>
+            <div class="game-name-div">biliard</div>
+        </div>
+        <div class="game-image-name-div"> 
+            <div class="image-div"><img class="game-image" src="templerun.png"></div>
+            <div class="game-name-div">templerun</div>
+        </div>
+        <div class="game-image-name-div"> 
+            <div class="image-div"><img class="game-image" src="biliards.png"></div>
+            <div class="game-name-div">biliard</div>
+        </div>
+        <div class="game-image-name-div"> 
+            <div class="image-div"><img class="game-image" src="soccer.png"></div>
+            <div class="game-name-div">soccer 2024</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchBar = document.querySelector(".search-bar");
+            const gameNameDivs = document.querySelectorAll(".game-name-div");
+
+            searchBar.addEventListener("input", function(event) {
+                const searchTerm = event.target.value.toLowerCase();
+
+                gameNameDivs.forEach(function(gameNameDiv) {
+                    const gameName = gameNameDiv.textContent.toLowerCase();
+                    const parentDiv = gameNameDiv.parentNode;
+
+                    if (gameName.includes(searchTerm)) {
+                        parentDiv.style.display = "block";
+                    } else {
+                        parentDiv.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
